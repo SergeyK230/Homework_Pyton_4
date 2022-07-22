@@ -5,20 +5,15 @@ spisok = [n]
 
 def prosto(spisok):
     fl = 0
-    for n in range(len(spisok)):
-#        fl = 0
-        for i in range(spisok[n] // 2, 2, -1):
-            if spisok[n] % i == 0:
-#                spisok.append(spisok[n] // i)
-                spisok.append(i)
-                spisok[n] = spisok[n] // i              
-                fl += 1
-#        spisok.remove(n)
+    for i in range(spisok[-1] // 2, 1, -1):
+        if spisok[len(spisok)-1] % i == 0:
+            spisok.append(i)
+            spisok[-2] = spisok[-2] // i              
+            fl += 1
+
     if fl != 0:
         prosto(spisok)
 
-
-#spisok.append(n)
 prosto(spisok)
     
 print(spisok)
